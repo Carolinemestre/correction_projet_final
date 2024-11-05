@@ -1,3 +1,3 @@
 select brand_id,
     brand_name
-from {{ ref('bike_database', 'brands') }}
+from {{ source('bike_database', 'brands') }}
