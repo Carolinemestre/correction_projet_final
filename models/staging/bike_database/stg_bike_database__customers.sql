@@ -4,5 +4,6 @@ select customer_id,
   case when phone = 'NULL' THEN null else phone end as phone,
   email, 
   street,
-  city
+  city,
+  state
 from {{ source('bike_database', 'customers') }}

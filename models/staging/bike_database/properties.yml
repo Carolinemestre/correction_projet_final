@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: stg_bike_database__brands
+    columns:
+      - name: orbrand_idder_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_bike_database__categories
+    columns:
+      - name: category_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_bike_database__customers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_bike_database__order_items
+    columns:
+      - name: order_item_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_bike_database__orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_bike_database__products
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_bike_database__staffs
+    columns:
+      - name: staff_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_bike_database__stocks
+    columns:
+      - name: stock_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_bike_database__stores
+    columns:
+      - name: store_id
+        tests:
+          - unique
+          - not_null
