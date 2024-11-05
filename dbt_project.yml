@@ -40,10 +40,10 @@ models:
     # Applies to all files under models/example/
     staging:
       bike_database:
-        +materialized: view
+        materialized: view
     intermediate:
       bike_database:
-        +materialized: view
+        materialized: view
     mart:
       bike_database:
-        +materialized: table
+        materialized: table
