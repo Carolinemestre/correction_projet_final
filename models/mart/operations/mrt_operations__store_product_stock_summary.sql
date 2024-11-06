@@ -14,6 +14,7 @@ SELECT  stocks.store_id,
     stocks.product_id, 
     stocks.store_name,
     stocks.product_name, 
+    stocks.stock_quantity,
     products_solds.total_item_solds,
     products_solds.total_sales_amount
 
