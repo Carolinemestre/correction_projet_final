@@ -2,17 +2,20 @@ with sales_grouped_by_product AS (
 
 select
     product_id,
-    SUM(total_order_item_amount) AS total_sales,
-    SUM(item_quantity) AS total_quantity_sold
-from {{ ref('int_bike_database__order_items') }} as oi
+    SUM(total_sales_amount) AS total_sales_amount,
+    SUM(total_item_solds) AS total_item_solds
+from {{ ref('mrt_operations__store_product_stock_summary') }} as oi
+group by product_id
 
 )
 
 SELECT
     products.product_id,
+    products.product_name,
     products.category_name,
     products.brand_name,
-    sales.total_sales,
-    sales.total_quantity_sold
+    sales.total_sales_amount,
+    sales.total_item_solds
+    
 FROM {{ ref('int_bike_database__products') }} as products
-left join sales_grouped_by_product as sales
+left join sales_grouped_by_product as sales ON sales.product_id = products.product_id

@@ -6,9 +6,12 @@ select oi.order_id,
     o.store_id,
     o.staff_id,
     oi.product_id,
+    c.city AS customer_city,
+    c.state AS customer_state,
     item_quantity,
     item_price,
     discount,
     total_order_item_amount
 from {{ ref('stg_bike_database__order_items') }} AS oi
 left join {{ ref('stg_bike_database__orders') }} AS o ON o.order_id = oi.order_id 
+left join {{ ref('stg_bike_database__customers') }} as c ON c.customer_id = o .customer_id
