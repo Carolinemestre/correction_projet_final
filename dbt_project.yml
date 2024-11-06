@@ -40,10 +40,13 @@ models:
     # Applies to all files under models/example/
     staging:
       bike_database:
+        schema: stg_bike_database
         materialized: view
     intermediate:
       bike_database:
+        schema: int_bike_database
         materialized: view
     mart:
-      bike_database:
+      operations:
+        schema: mrt_operations
         materialized: table

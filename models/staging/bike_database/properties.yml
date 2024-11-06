@@ -3,7 +3,7 @@ version: 2
 models:
   - name: stg_bike_database__brands
     columns:
-      - name: orbrand_idder_id
+      - name: brand_id
         tests:
           - unique
           - not_null
